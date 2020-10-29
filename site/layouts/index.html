@@ -1,0 +1,13 @@
+{{ define "nav"}}
+  <!-- {{ partial "default_topnav.html" . }} -->
+{{end}}
+
+{{ define "hero" }}
+  {{partial "default_hero.html" .}}
+{{end}}
+
+{{ define "main" }}
+  <div class="content">
+    {{.Content}}
+  </div>
+{{ end }}

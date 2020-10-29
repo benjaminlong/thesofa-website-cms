@@ -1,0 +1,28 @@
+@import "github-md";
+@import '~bulma/bulma';
+
+// @import '~font-awesome/scss/font-awesome';
+
+.table-of-content {
+  font-size: 0.875rem;
+}
+
+.has-background-image {
+  position: relative;
+  width: 100%;
+  // background-image: url("/images/backgrounds/lacanau-view.jpg") !important;
+  background-size: cover;
+}
+
+.has-background-image::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #020228;
+  bottom: 0;
+  left: 0;
+  // background-image: url("/images/backgrounds/lacanau-view.jpg");
+  // background-size: cover;
+  opacity: 0.6;
+  content: "";
+}

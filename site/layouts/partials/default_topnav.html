@@ -1,0 +1,61 @@
+<nav class="navbar"
+     role="navigation"
+     aria-label="main navigation"
+     data-controller="navbar">
+  <div class="navbar-brand is-fullwidth">
+    <a class="navbar-item" href="/">
+      <i class="mr-2 fa fa-heart"></i>
+      {{ .Site.Title }}
+    </a>
+<!-- {#    <button class="button is-info" data-action="click->navbar#jsAction">#}
+{#      Action#}
+{#    </button>#} -->
+
+    <a role="button"
+       class="navbar-burger"
+       aria-label="menu"
+       data-action="click->navbar#toggleModalFullscreenMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      {{ if .Site.Menus.main }}
+        {{ range .Site.Menus.main }}
+          <a class="navbar-item" href="{{ .URL }}" title="{{ .Name }} page">
+            {{ if .Pre }}
+              <span class="mr-1 icon has-text-primary">
+                {{ .Pre }}
+              </span>
+            {{ end }}
+            {{ .Name }}
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+
+    <div class="navbar-end">
+    </div>
+  </div>
+</nav>
+
+<div class="modal modal-fullscreen-menu" data-controller="navbar">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete"
+              aria-label="close"
+              data-action="click->navbar#toggleModalFullscreenMenu"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" data-action="click->navbar#toggleModalFullscreenMenu">Cancel</button>
+    </footer>
+  </div>
+</div>

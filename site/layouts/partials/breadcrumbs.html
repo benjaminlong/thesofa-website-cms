@@ -1,0 +1,19 @@
+{{ $paths := (split .URL "/") }}
+{{ $count := (sub (len $paths) 2) }}
+{{ $href := (string "/") }}
+
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="/">Home</a></li>
+    {{ range $index, $value := $paths }}
+      {{ if gt (len . ) 0 }}
+        {{ $href = (path.Join $href $value) }}
+        {{ if eq $index $count }}
+          <li class="is-active"><a href="{{$href}}">{{ humanize $value }}</a></li>
+        {{ else }}
+          <li><a href="{{$href}}">{{ humanize $value }}</a></li>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </ul>
+</nav>

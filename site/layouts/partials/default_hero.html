@@ -1,0 +1,38 @@
+<section class="hero {{with .Params.hero.color }}{{.}}{{else}}is-light{{end}} {{with .Params.hero.size }}{{.}}{{end}} {{with .Params.hero.others }}{{.}}{{end}} {{if .Params.hero.backgroundImage}}has-background-image{{end}}"
+        style="{{if .Params.hero.backgroundImage}}background-image: url('{{.Params.hero.backgroundImage}}'){{end}}">
+  <!-- Hero head: will stick at the top -->
+  {{if .Params.hero.includeTopNav}}
+    <div class="hero-head">
+      <header class="navbar">
+        {{ partial "default_topnav.html" . }}
+      </header>
+    </div>
+  {{end}}
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        {{ .Params.Title }}
+      </h1>
+      <h2 class="subtitle">
+        {{ with .Params.description }}
+          {{ . }}
+        {{end}}
+      </h2>
+    </div>
+  </div>
+
+  <!-- Hero footer: will stick at the bottom -->
+  {{if .Params.hero.footer}}
+    <div class="hero-foot has-text-white"
+         style="z-index: 1">
+      <div class="">
+        <a href="#about" class="icon has-text-white">
+          <i class="fa fa-angle-down fa-3x"></i>
+        </a>
+      </div>
+    </div>
+  {{end}}
+
+</section>

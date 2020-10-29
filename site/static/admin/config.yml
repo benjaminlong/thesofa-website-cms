@@ -1,0 +1,98 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+local_backend: true
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+# publish_mode: editorial_workflow
+collections:
+  - name: "pages"
+    label: "/"
+    files:
+      - label: "Home"
+        name: "home"
+        create: true
+        file: "site/content/_index.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: color
+                name: color
+                widget: select
+                options: ["is-primary", 'is-light', "is-info", "is-success"]
+              - label: size
+                name: size
+                widget: select
+                options: ["is-fullheight", "is-small", "is-medium"]
+              - label: others
+                name: others
+                widget: string
+                options: ["has-text-centered", "is-bold"]
+              - {label: backgroundImage, name: backgroundImage, widget: file}
+              - {label: includeTopNav, name: includeTopNav, widget: boolean}
+              - {label: footer, name: footer, widget: boolean}
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: "About"
+        name: "about"
+        create: true
+        file: "site/content/about.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Form, name: form, widget: markdown}
+          - label: Team
+            name: team
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Photo, name: photo, widget: image}
+  # - name: 'posts'
+  #   label: 'Posts'
+  #   folder: 'content/posts'
+  #   create: true
+  #   editor:
+  #     preview: false
+  #   fields:
+  #     - { label: 'Title', name: 'title', widget: 'string' }
+  #     - { label: 'Description', name: 'description', widget: 'string' }
+  #     - { label: 'Body', name: 'body', widget: 'markdown' }
+  #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+  # - name: 'portfolio'
+  #   label: 'Portfolio'
+  #   label_singular: 'Project'
+  #   folder: 'site/content/portfolio'
+  #   create: true
+  #   # path: '{{slug}}/index'
+  #   # allow_nesting: true
+  #   nested:
+  #     depth: 100 # max depth to show in the collection tree
+  #   # adding a meta object with a path property allows editing the path of entries
+  #   # moving an existing entry will move the entire sub tree of the entry to the new location
+  #   meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+  #   # slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  #   editor:
+  #     preview: false
+  #   fields:
+  #     - { label: 'Title', name: 'title', widget: 'string' }
+  #     - { label: 'Description', name: 'description', widget: 'string' }
+  #     - { label: 'Summary', name: 'summary', widget: 'string' }
+  #     - label: Hero
+  #       name: hero
+  #       widget: "object"
+  #       collapsed: true
+  #       fields:
+  #         - label: size
+  #           name: size
+  #           widget: select
+  #           options: ["is-fullheight", "is-small", "is-medium"]
+  #         - label: color
+  #           name: color
+  #           widget: select
+  #           options: ["is-primary", "is-light", 'is-dark']
+  #         - {label: backgroundImage, name: backgroundImage, widget: file}
+  #         - {label: footer, name: footer, widget: boolean, default: false, required: false}
+  #     - { label: 'Body', name: 'body', widget: 'markdown' }
