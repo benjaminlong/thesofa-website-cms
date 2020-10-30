@@ -9,6 +9,7 @@ module.exports = {
   entry: {
     main: path.join(__dirname, "src", "index.js"),
     cms: path.join(__dirname, "src", "js", "cms.js"),
+    stimulus: path.join(__dirname, "src", "js", "stimulus", "application.js"),
     site: path.join(__dirname, "site", "styles", "scss", "app.scss"),
   },
 

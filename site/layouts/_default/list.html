@@ -13,18 +13,20 @@
 
   <div class="columns">
     <div class="column">
-      <div class="columns is-mobile is-multiline">
-        {{ range .Pages }}
-          <a class="column is-6 is-3-desktop" href="{{ .RelPermalink }}">
-            <div class="card">
-              <div class="card-content">
-                <h2 class="title is-6">{{ .Title }}</h2>
-                <div class="subtitle is-6">{{ .Summary  }}</div>
+      {{if .Params.children}}
+        <div class="columns is-mobile is-multiline">
+          {{ range .Pages }}
+            <a class="column is-6 is-3-desktop" href="{{ .RelPermalink }}">
+              <div class="card">
+                <div class="card-content">
+                  <h2 class="title is-6">{{ .Title }}</h2>
+                  <div class="subtitle is-6">{{ .Summary  }}</div>
+                </div>
               </div>
-            </div>
-          </a>
-        {{ end }}
-      </div>
+            </a>
+          {{ end }}
+        </div>
+      {{end}}
 
       <div class="markdown-body">
         {{ .Content }}

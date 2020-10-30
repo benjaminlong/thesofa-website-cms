@@ -2,16 +2,14 @@
 title: The Sofa's Lab
 description: Ideas and Education About Software
 image: /images/lacanau-view.jpg
+nav: false
 hero:
   backgroundImage: /images/uploads/lacanau-view.jpg
-  size: is-fullheight
-  color: is-primary
+  size: is-large
+  color: is-info
   others: has-text-centered
   includeTopNav: true
-  footer: true
-categories:
-  - page
-  - welcome
+  footer: false
 ---
 
 ## Welcome to the TheSofa's Lab

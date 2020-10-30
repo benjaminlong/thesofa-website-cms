@@ -2,14 +2,22 @@ baseURL = "/"
 languageCode = "en-us"
 title = "The Sofa"
 
+[outputFormats]
+  [outputFormats.LunrIndex]
+    baseName = "lunr-index"
+    mediaType = "application/json"
+
+[outputs]
+  home = ["HTML", "LunrIndex"]
+
 [menu]
   [[menu.main]]
     identifier = "portfolio"
     name = "Portfolio"
     url = "/portfolio/"
     weight = -110
-#   [[menu.main]]
-#     identifier = "open-source"
-#     name = "Open-Source"
-#     url = "/open-source/"
-#     weight = -100
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = -100

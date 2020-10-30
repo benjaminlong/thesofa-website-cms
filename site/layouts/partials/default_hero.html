@@ -3,9 +3,7 @@
   <!-- Hero head: will stick at the top -->
   {{if .Params.hero.includeTopNav}}
     <div class="hero-head">
-      <header class="navbar">
-        {{ partial "default_topnav.html" . }}
-      </header>
+      {{ partial "default_topnav.html" . }}
     </div>
   {{end}}
 

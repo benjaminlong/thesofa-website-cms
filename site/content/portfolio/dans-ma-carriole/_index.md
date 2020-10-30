@@ -9,6 +9,7 @@ hero:
   includeTopNav: false
   footer: false
   others: has-text-centered
+children: false
 ---
 # Presentation
 # Valeurs

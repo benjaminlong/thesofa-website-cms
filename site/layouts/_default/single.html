@@ -3,11 +3,12 @@
 {{ end }}
 
 {{ define "nav"}}
-  {{ partial "default_topnav.html" . }}
+  {{if .Params.nav}}
+    {{ partial "default_topnav.html" . }}
+  {{end}}
 {{end}}
 
 {{ define "hero" }}
-  <!-- {{ .Scratch.Set "hero.classNames" "is-primary is-bold" }} -->
   {{ if .Params.hero }}
     {{partial "default_hero.html" . }}
   {{ end }}
@@ -15,6 +16,12 @@
 
 {{ define "main" }}
   <!-- {{ partial "breadcrumbs.html" . }} -->
+
+  {{if .Params.partials}}
+    {{ range .Params.partials }}
+      {{partial . }}
+    {{ end }}
+  {{end}}
 
   <div class="columns">
     <div class="column">

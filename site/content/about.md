@@ -1,17 +1,19 @@
 ---
 title: Contact us
 intro: null
+nav: true
 hero:
   backgroundImage: /images/uploads/lacanau-view.jpg
-  size: is-medium
+  size: is-default
   color: is-primary
   others: has-text-centered
   includeTopNav: false
   footer: false
+partials:
+  - "form-contact-us"
 team: []
 ---
 
-Working in progress
 <!-- <form name="contact" data-netlify="true" netlify>
   <p>
     <label>Your Name: <input type="text" name="name" /></label>

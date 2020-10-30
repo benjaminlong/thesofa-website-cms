@@ -26,3 +26,27 @@
   opacity: 0.6;
   content: "";
 }
+
+.lunr-list {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 550px;
+  right: 0;
+  border: 1px solid #efefef;
+  padding: 1rem;
+  margin-top: 8px;
+  color: black;
+  text-align: left;
+}
+.lunr-list.is-active {
+  display: flex;
+  flex-direction: column;
+}
+.lunr-list .lunr-item {
+  border-top: 1px solid #efefef;
+}
+.lunr-item .title,
+.lunr-item .subtitle {
+  color: black !important;
+}

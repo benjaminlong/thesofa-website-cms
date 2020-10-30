@@ -48,6 +48,10 @@
       </div>
     </section>
     {{ block "footer" . }}{{ end }}
-    {{ block "scripts" . }}{{ end }}
+    {{ block "scripts" . }}
+      <script src="/stimulus.js"></script>
+      <!-- <script src="https://unpkg.com/lunr/lunr.js"></script> -->
+    {{ end }}
+
   </body>
 </html>

@@ -1,9 +1,13 @@
 {{ define "nav"}}
-  <!-- {{ partial "default_topnav.html" . }} -->
+  {{if .Params.nav}}
+    {{ partial "default_topnav.html" . }}
+  {{end}}
 {{end}}
 
 {{ define "hero" }}
-  {{partial "default_hero.html" .}}
+  {{ if .Params.hero }}
+    {{partial "default_hero.html" . }}
+  {{ end }}
 {{end}}
 
 {{ define "main" }}
