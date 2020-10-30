@@ -2,12 +2,12 @@ baseURL = "/"
 languageCode = "en-us"
 title = "The Sofa"
 
-# [menu]
-#   [[menu.main]]
-#     identifier = "portfolio"
-#     name = "Portfolio"
-#     url = "/portfolio/"
-#     weight = -110
+[menu]
+  [[menu.main]]
+    identifier = "portfolio"
+    name = "Portfolio"
+    url = "/portfolio/"
+    weight = -110
 #   [[menu.main]]
 #     identifier = "open-source"
 #     name = "Open-Source"
